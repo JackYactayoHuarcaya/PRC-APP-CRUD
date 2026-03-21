@@ -24,6 +24,8 @@ public class ProductoInfrastructure {
              } else{
                  return new ResponseData("no se pudo eliminar");
              }
-
+    }
+    public void updateProducto(UUID id, Producto producto){
+         DB.replaceAll(p->p.getId().equals(id)?producto:p);
     }
 }

@@ -30,4 +30,9 @@ public class ProductoController {
     public ResponseData delete (@PathVariable UUID id){
         return productoInfrastructure.deleteProducto(id);
     }
+    @PutMapping("/producto/{id}")
+    public ResponseData update(@PathVariable UUID id,@RequestBody Producto producto){
+        productoInfrastructure.updateProducto(id,producto);
+      return new ResponseData("ok");
+    }
 }
